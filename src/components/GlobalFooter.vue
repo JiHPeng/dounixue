@@ -1,15 +1,15 @@
 <template>
     <div class="footer-fixed">
         <div class="footer-flex">
-            <div class="footer-flex-inner">
+            <div class="footer-flex-inner" @click="index">
                 <img src="../assets/logo.png" alt="">
                 <span>首页</span>
             </div>
-            <div class="footer-flex-inner">
+            <div class="footer-flex-inner" @click="myLesson">
                 <img src="../assets/logo.png" alt="">
                 <span>课程</span>
             </div>
-            <div class="footer-flex-inner">
+            <div class="footer-flex-inner" @click="myInfo">
                 <img src="../assets/logo.png" alt="">
                 <span>我的</span>
             </div>
@@ -19,7 +19,27 @@
 
 <script>
     export default {
-        name: "globalFooter"
+        name: "globalFooter",
+        methods:{
+            index(){
+                this.$router.push({
+                    path:'index',
+                    query:{
+
+                    }
+                })
+            },
+            myLesson(){
+                this.$router.push({
+                    path:'mylesson'
+                })
+            },
+            myInfo(){
+                this.$router.push({
+                    path:'myinfo'
+                })
+            }
+        }
     }
 </script>
 
